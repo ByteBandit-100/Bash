@@ -10,12 +10,25 @@ then
 	read -p "enter first string: " str1
 	read -p "enter second string: " str2
 	
+	if [[ -z "$str1" ]];then
+	echo "first string is empty."
+	fi
+	
+	if [[ -z "$str2" ]];then
+	echo "second string is empty."
+	fi
+	
+	if [[ -z "$str1" && -z "$str2" ]];  then
+	exit
+	fi
+	
 	#string length
 	read -p "want to know string length(yes/no): " op
 	if [[ "${op,,}" == "yes" ]]; then
 	echo "Length of $str1 is: ${#str1}"
 	echo "Length of $str2 is: ${#str2}"
 	fi
+	
 	
 	#string comparison
 	read -p "want to compare strings(yes/no): " op
